@@ -1,0 +1,49 @@
+service: serverless-http-node
+frameworkVersion: '3'
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  environment:
+    MONGO_URL: "mongodb+srv://root:Test1234@superlevi.tta6sbs.mongodb.net/groundup_test"
+    MONGO_DB_NAME: nomina_test
+
+functions:
+  getUsers:
+    handler: src/handlers/users/getUsers.getUsers
+    events:
+      - httpApi:
+          path: /users
+          method: get
+  storeUser:
+    handler: src/handlers/users/storeUser.storeUser
+    events:
+      - httpApi:
+          path: /users
+          method: post
+  getUserDetail:
+    handler: src/handlers/users/getUserDetail.getUserDetail
+    events:
+      - httpApi:
+          path: /users/{id}
+          method: get
+  updateUserDetail:
+    handler: src/handlers/users/updateUser.updateUser
+    events:
+      - httpApi:
+          path: /users/{id}
+          method: put
+  deleteUser:
+    handler: src/handlers/users/deleteUser.deleteUser
+    events:
+      - httpApi:
+          path: /users/{id}
+          method: delete
+  api:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
