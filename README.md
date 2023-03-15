@@ -22,13 +22,13 @@ npm install
 ```
 - Once the installation done, you can run the application easily with
 ```shell
-<!-- If you are willing to run and deploy --!>
+## If you are willing to run and deploy
 serverless deploy 
 
-<!-- OR --!>
-<!-- If you want to run it in your local using serverless-offline --!>
+## OR
+## If you want to run it in your local using serverless-offline
 serverless offline start
 ```
 
 - Once the application running you can using postman to test the API using HTTP Request. You can check it under http://localhost:3000
-- You can also download the sample collection from here. Then you can import it to your own Postman
+- You can also download the sample collection from [here](https://github.com/waggyman/crud-nodejs-serverless/blob/main/postman_collection.json). Then you can import it to your own Postman
